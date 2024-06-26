@@ -69,7 +69,13 @@ for filepath2 in filepaths2:
     name = filename2.title()
 
     pdf2.set_font(family="Helvetica", size=16, style="B")
-    pdf2.cell(w=0, h=16, txt=name, align="L")
+    pdf2.cell(w=0, h=16, txt=name, align="L", ln=1)
+
+    with open(filepath2, "r") as file:
+        content = file.read()
+
+    pdf2.set_font(family="Helvetica", size=10)
+    pdf2.multi_cell(w=0, h=6, txt=content)
 
     # Generation of PDF
 pdf2.output(f"PDFs/txt_files_output.pdf")
