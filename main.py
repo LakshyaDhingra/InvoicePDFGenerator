@@ -61,8 +61,6 @@ filepaths2 = glob.glob("TxtFiles/*.txt")
 pdf2 = FPDF(orientation="P", unit="mm", format="A4")
 
 for filepath2 in filepaths2:
-    # Creation of PDF
-
     pdf2.add_page()
 
     filename2 = Path(filepath2).stem
